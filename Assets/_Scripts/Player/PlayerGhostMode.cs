@@ -27,24 +27,24 @@ public class PlayerGhostMode : MonoBehaviour
     [SerializeField]
     GameObject ghostEffect;
 
-    private void Update()
-    {
-        if (ghostModeOn)
-        {
+    //private void Update()
+    ////{
+    ////    if (ghostModeOn)
+    ////    {
             
-            playerGhost.SetActive(true);
-            health.setMaxHealth(100);
-            player.SetActive(false);
-            cameraController.setGhostMode(true);
+    ////        playerGhost.SetActive(true);
+    ////        health.setMaxHealth(100);
+    ////        player.SetActive(false);
+    ////        cameraController.setGhostMode(true);
 
           
-        }
-        else
-        {
-            health.setMaxHealth(10);
+    ////    }
+    ////    else
+    ////    {
            
-        }
-    }
+           
+    ////    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,6 +52,9 @@ public class PlayerGhostMode : MonoBehaviour
         {
             ghostModeOn = true;
             playerGhost.SetActive(true);
+            health.setMaxHealth(100);
+            player.SetActive(false);
+            cameraController.setGhostMode(true);
 
             StartCoroutine("DeactivateGhostMode", 10f);
 
@@ -64,6 +67,6 @@ public class PlayerGhostMode : MonoBehaviour
         yield return new WaitForSeconds(30f);
         ghostEffect.SetActive(false);
         ghostModeOn = false;
-        
+        health.setMaxHealth(10);
     }
 }

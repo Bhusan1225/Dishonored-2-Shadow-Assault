@@ -5,24 +5,27 @@ using UnityEngine;
 public class StoryMode : MonoBehaviour
 {
 
-    [SerializeField] GameObject StartUI;
-    [SerializeField] GameObject IntroUI;
+    [SerializeField] GameObject startUI;
+    [SerializeField] GameObject introUI;
+    [SerializeField] GameObject guideUI;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartUI.SetActive(true);
+        startUI.SetActive(true);
         StartCoroutine("StoryIntro", 5f);
     }
 
     private IEnumerator StoryIntro()
     {
-        yield return new WaitForSeconds(5f);
-        IntroUI.SetActive(true);
-        StartUI.SetActive(false);
-        yield return new WaitForSeconds(2f);
-        IntroUI.SetActive(false);
-
+        yield return new WaitForSeconds(3f);
+        introUI.SetActive(true);
+        startUI.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        guideUI.SetActive(true);
+        introUI.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        guideUI.SetActive(false);
 
     }
 
