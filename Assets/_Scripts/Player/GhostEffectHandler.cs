@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostMode : MonoBehaviour
+public class GhostEffectHandler : MonoBehaviour
 {
-
 
     [SerializeField]
     bool ghostModeOn;
@@ -23,8 +22,6 @@ public class GhostMode : MonoBehaviour
 
         }
     }
-
-
     private IEnumerator DeactivateGhostMode()
     {
         yield return new WaitForSeconds(10f);

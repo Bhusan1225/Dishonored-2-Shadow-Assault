@@ -12,10 +12,20 @@ public class PlayerInteraction : MonoBehaviour
         if (other.gameObject.CompareTag("GhostZone"))
         {
             ghostZoneUI.SetActive(true);
+           
         }
-        else
+      
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("GhostZone"))
         {
             ghostZoneUI.SetActive(false);
+
         }
     }
+
+
 }
