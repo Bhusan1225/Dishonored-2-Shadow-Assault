@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         SurfaceCheck();
         //Debug.Log("Player on Surface" + onSurface);
 
-        Animation();
+        
     }
     void SurfaceCheck()
     {
@@ -88,8 +88,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-                speed = runningSpeed;
-                animator.SetBool("isRunning", true);
+                
+            animator.SetBool("isRunning", true);
+            speed = runningSpeed;
         }
         else
         {
@@ -99,24 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void Animation()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            isGhostmode = !isGhostmode;
-            if (isGhostmode)
-            {
-                animator.SetBool("isCrawling", true);
-            }
-            else
-            {
-
-                animator.SetBool("isCrawling", false);
-            }
-        }
-
-
-    }
+   
 
 }
 

@@ -56,6 +56,11 @@ public class EnemyAI : MonoBehaviour
         
     }
 
+
+    public bool setEnemyDeath(bool _isEnemyDeath)
+    {
+        return isEnemyDead = _isEnemyDeath;
+    }
     private void Update()
     {
         playerInvisionRadius = Physics.CheckSphere(transform.position, visionRadious, playerLayer);
@@ -77,6 +82,16 @@ public class EnemyAI : MonoBehaviour
             animator.SetBool("Idle", true);
             AttackModes();
         }
+
+        //if (isEnemyDead == true)
+        //{
+        //    Debug.Log(" the enemy is dead");
+        //    animator.SetTrigger("Dead");
+        //    animator.SetBool("Run", false);
+        //    animator.SetBool("Idle", false);
+            
+            
+        //}
     }
     private void AttackModes()
     {

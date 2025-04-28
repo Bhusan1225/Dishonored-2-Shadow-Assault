@@ -33,7 +33,7 @@ public class PlayerGhostMode : MonoBehaviour
         {
             
             playerGhost.SetActive(true);
-            health.setMaxHealth(1000);
+            health.setMaxHealth(100);
             player.SetActive(false);
             cameraController.setGhostMode(true);
 
@@ -41,7 +41,7 @@ public class PlayerGhostMode : MonoBehaviour
         }
         else
         {
-            health.setMaxHealth(100);
+            health.setMaxHealth(10);
            
         }
     }
@@ -53,7 +53,7 @@ public class PlayerGhostMode : MonoBehaviour
             ghostModeOn = true;
             playerGhost.SetActive(true);
 
-            StartCoroutine("DeactivateGhostMode", 100f);
+            StartCoroutine("DeactivateGhostMode", 10f);
 
         }
     }
@@ -61,7 +61,7 @@ public class PlayerGhostMode : MonoBehaviour
 
     private IEnumerator DeactivateGhostMode()
     {
-        yield return new WaitForSeconds(100f);
+        yield return new WaitForSeconds(30f);
         ghostEffect.SetActive(false);
         ghostModeOn = false;
         
