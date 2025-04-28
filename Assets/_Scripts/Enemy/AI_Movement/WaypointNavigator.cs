@@ -5,14 +5,14 @@ using UnityEngine;
 public class WaypointNavigator : MonoBehaviour
 {
     [Header("AI Character")]
-    EnemyNavigationScript character;
+    CharacterNavigationScript character;
     public WayPoint currentWaypoint;
     int direction;
 
 
     private void Awake()
     {
-        character = GetComponent<EnemyNavigationScript>();
+        character = GetComponent<CharacterNavigationScript>();
     }
 
     private void Start()
